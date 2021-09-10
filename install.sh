@@ -21,7 +21,7 @@ cp tmux.conf ~/.tmux.conf
 while true; do
 	read -p "Do you have sudo and would you like to install software?: " yn
 	case $yn in
-		[Yy]* ) read -p "What package manager are you using? (ex. yum | apt ) : " PMGR
+		[Yy]* ) read -p "What package manager are you using? (ex. yum | apt ): " PMGR
 			sudo $PMGR update && sudo $PMGR install $(cat software.txt); break;;
 		[Nn]* ) exit;;
 		* ) echo "Yes or no answer, my guy.";;
