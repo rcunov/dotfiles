@@ -1,30 +1,38 @@
 #!/bin/sh
 
+# Initialize yes/no dialog function
+function ask {
+    while true; do
+        read -p "$* [y/n]: " yn
+        case $yn in
+            [Yy]*) return 0  ;;  
+            [Nn]*) echo "Exiting..." ; return  1 ;;
+			* ) echo "Yes or no answer, my guy.";;
+        esac
+    done
+}
+
 # Appends aliases to shell-specific config file such as .bashrc or .zshrc
-read -p "What file holds your aliases? (ex. /home/user/.zshrc ): " RCFILE
-printf "\n" >> $RCFILE
-cat aliases.txt >> "$RCFILE"
+ask "Would you like to add aliases to your shell config?" && 
+read -p "What is your shell config file? (ex. .zshrc): " RCFILE &&
+printf "\n" >> $HOME/$RCFILE && cat aliases.txt >> $HOME/$RCFILE;
+
 
 # Moves vim colorscheme file to proper directory and sets it as default
-mkdir -p ~/.vim/colors
-cp jellybeans.vim ~/.vim/colors
-echo "colorscheme jellybeans" >> ~/.vimrc
+ask "Would you like to set the vim style?" &&
+mkdir -p ~/.vim/colors &&
+cp jellybeans.vim ~/.vim/colors &&
+echo "colorscheme jellybeans" > ~/.vimrc
 
 # Add my public keys to authorized_keys file
-mkdir -p ~/.ssh
+ask "Would you like to add public keys to ~/.ssh/authorized_keys?" &&
+mkdir -p ~/.ssh &&
 cat authorized_keys >> ~/.ssh/authorized_keys
 
 # Add my tmux configuration
-cp tmux.conf ~/.tmux.conf
+ask "Would you like to set the tmux config?" && cp tmux.conf ~/.tmux.conf
 
 # Install software I like
-while true; do
-	read -p "Do you have sudo and would you like to install software?: " yn
-	case $yn in
-		[Yy]* ) read -p "What package manager are you using? (ex. yum | apt ): " PMGR
-			sudo $PMGR update && sudo $PMGR install $(cat software.txt); break;;
-		[Nn]* ) exit;;
-		* ) echo "Yes or no answer, my guy.";;
-	esac
-done
-
+ask "Do you have sudo and would you like to install software?" &&
+read -p "What package manager are you using? (ex. yum | apt ): " PMGR &&
+sudo $PMGR update && sudo $PMGR install $(cat software.txt)
