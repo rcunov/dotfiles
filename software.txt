@@ -1,1 +1,1 @@
-dnsutils tmux wget curl htop iftop vim 
+dnsutils tmux wget curl htop iftop vim rsync 
