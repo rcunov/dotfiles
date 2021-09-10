@@ -6,7 +6,9 @@ function ask {
         read -p "$* [y/n]: " yn
         case $yn in
             [Yy]*) return 0  ;;  
-            [Nn]*) echo "Skipping that part." ; return  1 ;;
+            [Nn]*) echo "Skipping that part." ; 
+				sleep 2;
+				return  1 ;;
 			* ) echo "Yes or no answer, my guy.";
 				sleep 2;;
         esac
