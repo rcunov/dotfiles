@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Initialize yes/no dialog function
 function ask_yes_no {
