@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Appends aliases to shell-specific config file such as .bashrc or .zshrc
-read -p "What file holds your aliases? (ex. /home/user/.zshrc ) : " RCFILE
+read -p "What file holds your aliases? (ex. /home/user/.zshrc ): " RCFILE
 printf "\n" >> $RCFILE
 cat aliases.txt >> "$RCFILE"
 
@@ -19,7 +19,7 @@ cp tmux.conf ~/.tmux.conf
 
 # Install software I like
 while true; do
-	read -p "Do you have sudo and would you like to install software?" yn
+	read -p "Do you have sudo and would you like to install software?: " yn
 	case $yn in
 		[Yy]* ) read -p "What package manager are you using? (ex. yum | apt ) : " PMGR
 			sudo $PMGR update && sudo $PMGR install $(cat software.txt);;
