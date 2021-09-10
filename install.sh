@@ -7,8 +7,8 @@ function ask {
         case $yn in
             [Yy]*) return 0  ;;  
             [Nn]*) echo "Skipping that part." ; 
-				sleep 2;
-				return  1 ;;
+				sleep 1;
+				exit;;
 			* ) echo "Yes or no answer, my guy.";
 				sleep 2;;
         esac
@@ -36,5 +36,6 @@ ask "Would you like to set the tmux config?" && cp tmux.conf ~/.tmux.conf
 
 # Install software I like
 ask "Do you have sudo and would you like to install software?" &&
-read -p "What package manager are you using? (ex. yum | apt ): " PMGR &&
+read -p "What package manager are you using? (ex. yum | apt): " PMGR &&
 sudo $PMGR update && sudo $PMGR install $(cat software.txt)
+
