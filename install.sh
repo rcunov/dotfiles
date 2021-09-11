@@ -7,7 +7,7 @@ function ask {
         case $yn in
             [Yy]*) return 0;;  
             [Nn]*) echo "Skipping that part."; 
-				sleep 2;
+				sleep 1;
 				return  1;;
 		*) echo "Yes or no answer, my guy.";
 				sleep 2;;
