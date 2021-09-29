@@ -1,1 +1,1 @@
-dnsutils tmux wget curl htop iftop vim rsync iperf3 nmap unzip
+dnsutils tmux wget curl htop iftop vim rsync iperf3 nmap unzip sysstat
