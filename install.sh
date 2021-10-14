@@ -22,9 +22,11 @@ printf "\n" >> $HOME/$RCFILE && cat aliases.txt >> $HOME/$RCFILE;
 
 ask "Would you like a fancy color prompt?" &&
 read -p "What is your shell profile file? (ex. .bash_profile): " PROFILE &&
-if $USER == "root"
+if [ $USER = "root" ]
+then
 	printf "\n" >> $HOME/$PROFILE &&
-	echo "PS1='\[\033[01;34m\]\u@\h\[\033[00m\]:\[\033[01;35m\]\w\[\033[00m\]# '" >> $HOME/$PROFILE
+	echo "PS1='\[\033[01;34m\]\u@\h\[\033[00m\]:\[\033[01;35m\]\w\[\033[00m\]\# '" >> $HOME/$PROFILE
+	# might have to do some janky stuff with sed to make that hash mark insert properly. todo
 else
 	printf "\n" >> $HOME/$PROFILE &&
 	echo "PS1='\[\033[01;34m\]\u@\h\[\033[00m\]:\[\033[01;35m\]\w\[\033[00m\]$ '" >> $HOME/$PROFILE
