@@ -732,6 +732,6 @@ delf s:grey_level
 delf s:grey_number
 " }}}
 
-hi Normal ctermbg=black
+hi Normal ctermbg=16
 set mouse-=a
-
+syntax on
