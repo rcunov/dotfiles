@@ -1,2 +1,7 @@
-alias l="ls -hal"
+alias ll="ls -hAlF"
+alias l="ls -hl"
+alias temp="watch -n 1 sensors"
+#alias temp="watch -n 1 vcgencmd measure_temp"
+alias update="sudo apt update"
+alias upgrade="sudo apt upgrade"
 
