@@ -4,4 +4,10 @@ alias temp="watch -n 1 sensors"
 #alias temp="watch -n 1 vcgencmd measure_temp"
 alias update="sudo apt update"
 alias upgrade="sudo apt upgrade"
+alias ta='tmux attach -t'
+alias tad='tmux attach -d -t'
+alias ts='tmux new-session -s'
+alias tl='tmux list-sessions'
+alias tksv='tmux kill-server'
+alias tkss='tmux kill-session -t'
 
