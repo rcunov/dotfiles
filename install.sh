@@ -18,7 +18,8 @@ function ask {
 # Appends aliases to shell-specific config file such as .bashrc or .zshrc
 ask "Would you like to add aliases to your shell config?" && 
 read -p "What is your shell config file? (ex. .zshrc): " RCFILE &&
-printf "\n" >> $HOME/$RCFILE && cat aliases.txt >> $HOME/$RCFILE;
+printf "\n" >> $HOME/$RCFILE && cat aliases.txt >> $HOME/$RCFILE && 
+cat bashrc >> $HOME/$RCFILE;
 
 # Moves vim colorscheme file to proper directory and sets it as default
 ask "Would you like to set the vim style?" &&
