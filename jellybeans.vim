@@ -736,5 +736,5 @@ hi Normal ctermbg=16
 set mouse-=a
 syntax on
 set statusline+=%F
-set number
+set rnu
 
