@@ -17,7 +17,7 @@ function ask {
 
 # Appends aliases to shell-specific config file such as .bashrc or .zshrc
 ask "Would you like to add aliases to ~/.bash_aliases?" && 
-cat aliases.txt >> $HOME/.bash_aliases
+cat aliases.txt > $HOME/.bash_aliases
 
 ask "Would you like to set the bash prompt?" &&
 cat bashrc >> $HOME/.bashrc
