@@ -16,10 +16,11 @@ function ask {
 }
 
 # Appends aliases to shell-specific config file such as .bashrc or .zshrc
-ask "Would you like to add aliases to your shell config?" && 
-read -p "What is your shell config file? (ex. .zshrc): " RCFILE &&
-printf "\n" >> $HOME/$RCFILE && cat aliases.txt >> $HOME/$RCFILE && 
-cat bashrc >> $HOME/$RCFILE;
+ask "Would you like to add aliases to ~/.bash_aliases?" && 
+cat aliases.txt >> $HOME/.bash_aliases
+
+ask "Would you like to set the bash prompt?" &&
+cat bashrc >> $HOME/.bashrc
 
 # Moves vim colorscheme file to proper directory and sets it as default
 ask "Would you like to set the vim style?" &&
@@ -37,5 +38,5 @@ ask "Would you like to set the tmux config?" && cp tmux.conf ~/.tmux.conf
 
 # Install software I like
 ask "Do you have sudo and would you like to install software?" &&
-read -p "What package manager are you using? (ex. yum | apt): " PMGR &&
+read -p "What package manager are you using? (ex. dnf | apt): " PMGR &&
 sudo $PMGR update && sudo $PMGR install $(cat software.txt)
