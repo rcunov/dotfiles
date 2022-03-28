@@ -1,1 +1,1 @@
-PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+PS1='\u@\h:\w\$ '
