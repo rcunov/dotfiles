@@ -15,14 +15,11 @@ function ask {
     done
 }
 
-# Appends aliases to shell-specific config file such as .bashrc or .zshrc
-ask "Would you like to add aliases to ~/.bash_aliases?" &&
-cat aliases.txt > /root/.bash_aliases
-
-cat minimal-install.txt >> /root/.bashrc
+ask "Would you like to source bash_aliases from bashrc?" && cat minimal-install.txt >> /root/.bashrc
 mkdir -p /root/.vim/colors
 read -p "What is the user you want to copy from?: " USR
 
-ln -s /home/$USR/.tmux.conf /root/.tmux.conf
-ln -s /home/$USR/.vim/colors/jellybeans.vim /root/.vim/colors/jellybeans.vim
+rm /root/.bash_aliases && ln -s /home/$USR/.bash_aliases /root/.bash_aliases
+rm /root/.tmux.conf && ln -s /home/$USR/.tmux.conf /root/.tmux.conf
+rm /root/.vim/colors/jellybeans.vim && ln -s /home/$USR/.vim/colors/jellybeans.vim /root/.vim/colors/jellybeans.vim
 
