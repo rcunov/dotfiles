@@ -26,14 +26,21 @@ cat bashrc >> $HOME/.bashrc
 ask "Would you like to set the vim style?" &&
 mkdir -p ~/.vim/colors &&
 cp jellybeans.vim ~/.vim/colors &&
-echo "colorscheme jellybeans" > ~/.vimrc
+# Sets yaml tab behavior
+echo "autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab\ncolorscheme jellybeans" >> ~/.vimrc &&
+# Installs vim plugins, requires vim 7.3 or newer
+mkdir -p ~/.vim/pack/git-plugins/start &&
+git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale &&
+git clone https://github.com/Yggdroot/indentLine.git ~/.vim/pack/vendor/start/indentLine &&
+vim -u NONE -c "helptags  ~/.vim/pack/vendor/start/indentLine/doc" -c "q" &&
+pip install --user yamllint
 
 # Add my public keys to authorized_keys file
 ask "Would you like to add public keys to ~/.ssh/authorized_keys?" &&
 mkdir -p ~/.ssh &&
 cat authorized_keys >> ~/.ssh/authorized_keys
 
-# Add my tmux configuration
+# Add tmux configuration
 ask "Would you like to set the tmux config?" && cp tmux.conf ~/.tmux.conf
 
 # Install software I like
