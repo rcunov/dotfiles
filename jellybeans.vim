@@ -733,6 +733,3 @@ delf s:grey_number
 " }}}
 
 hi Normal ctermbg=16
-syntax on
-set statusline+=%F
-set mouse-=a
