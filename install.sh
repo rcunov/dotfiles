@@ -27,7 +27,7 @@ ask "Would you like to set the vim style?" &&
 mkdir -p ~/.vim/colors &&
 cp jellybeans.vim ~/.vim/colors &&
 # Sets yaml tab behavior
-echo "autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab\ncolorscheme jellybeans" >> ~/.vimrc &&
+echo "autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab\ncolorscheme jellybeans\nset foldmethod=indent\nnnoremap <Space> za" >> ~/.vimrc &&
 # Installs vim plugins, requires vim 7.3 or newer
 mkdir -p ~/.vim/pack/git-plugins/start &&
 git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale &&
