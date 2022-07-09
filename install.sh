@@ -28,7 +28,7 @@ mkdir -p ~/.vim/colors &&
 cp jellybeans.vim ~/.vim/colors &&
 # Adds vim config to user's vimrc
 OPTIONS_PATH=$(readlink -f vim-options.txt) &&
-printf "if filereadable(\"$OPTIONS_PATH\")""\n  source $OPTIONS_PATH""\nendif" >> ~/.vimrc &&
+printf "\nif filereadable(\"$OPTIONS_PATH\")""\n  source $OPTIONS_PATH""\nendif" >> ~/.vimrc &&
 # Installs vim plugins, requires vim 7.3 or newer
 mkdir -p ~/.vim/pack/git-plugins/start &&
 git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale &&
