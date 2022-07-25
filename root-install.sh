@@ -22,4 +22,5 @@ read -p "What is the user you want to copy from?: " USR
 rm -f /root/.bash_aliases && ln -s /home/$USR/.bash_aliases /root/.bash_aliases
 rm -f /root/.tmux.conf && ln -s /home/$USR/.tmux.conf /root/.tmux.conf
 rm -f /root/.vim/colors/jellybeans.vim && ln -s /home/$USR/.vim/colors/jellybeans.vim /root/.vim/colors/jellybeans.vim
+rm -f /root/.vimrc && ln -s /home/$USR/.vimrc /root/.vimrc
 
