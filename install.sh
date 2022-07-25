@@ -15,6 +15,9 @@ function ask {
     done
 }
 
+# Prepares for various installs
+read -p "What package manager are you using? (ex. dnf | apt): " PMGR
+
 # Appends aliases to shell-specific config file such as .bashrc or .zshrc
 ask "Would you like to add aliases to ~/.bash_aliases?" && 
 cat aliases.txt > $HOME/.bash_aliases
@@ -24,6 +27,7 @@ cat bashrc >> $HOME/.bashrc
 
 # Moves vim colorscheme file to proper directory and sets it as default
 ask "Would you like to set the vim style?" &&
+sudo $PMGR install vim python3-pip -y &&
 mkdir -p ~/.vim/colors &&
 cp jellybeans.vim ~/.vim/colors &&
 # Adds vim config to user's vimrc
@@ -38,13 +42,14 @@ pip install --user yamllint
 
 # Add my public keys to authorized_keys file
 ask "Would you like to add public keys to ~/.ssh/authorized_keys?" &&
-mkdir -p ~/.ssh &&
-cat authorized_keys >> ~/.ssh/authorized_keys
+sudo $PMGR install ssh-import-id -y &&
+ssh-import-id gh:rcunov
 
 # Add tmux configuration
-ask "Would you like to set the tmux config?" && cp tmux.conf ~/.tmux.conf
+ask "Would you like to set the tmux config?" && 
+sudo $PMGR install tmux -y &&
+cp tmux.conf ~/.tmux.conf
 
 # Install software I like
-ask "Do you have sudo and would you like to install software?" &&
-read -p "What package manager are you using? (ex. dnf | apt): " PMGR &&
+ask "Would you like to install optional software?" &&
 sudo $PMGR update && sudo $PMGR install $(cat software.txt)
