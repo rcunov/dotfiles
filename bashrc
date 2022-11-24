@@ -1,1 +1,2 @@
+PROMPT_DIRTRIM=2
 PS1='\w\$ '
