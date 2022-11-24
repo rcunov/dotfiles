@@ -6,4 +6,4 @@ colorscheme jellybeans
 set foldmethod=indent
 set foldlevel=20
 nnoremap <Space> za
-let g:indentLine_char = '⦙'
+let g:indentLine_char = '¦'
