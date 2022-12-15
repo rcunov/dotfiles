@@ -30,7 +30,7 @@ cat include-bashrc.txt >> $HOME/.bashrc
 ask "Would you like to set the vim style?" &&
 sudo $PMGR install vim python3-pip -y &&
 mkdir -p ~/.vim/colors &&
-rm ~/.vim/colors/jellybeans.vim &&
+touch ~/.vim/colors/jellybeans.vim && rm ~/.vim/colors/jellybeans.vim &&
 ln -s $(readlink -f ./jellybeans.vim) ~/.vim/colors/jellybeans.vim &&
 # Adds vim config to user's vimrc
 OPTIONS_PATH=$(readlink -f vim-options.txt) &&
