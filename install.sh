@@ -50,7 +50,7 @@ ssh-import-id gh:rcunov
 # Add tmux configuration
 ask "Would you like to set the tmux config?" && 
 sudo $PMGR install tmux -y &&
-rm ~/.tmux.conf && ln -s $(readlink -f ./tmux.conf) ~/.tmux.conf
+touch ~/.tmux.conf && rm ~/.tmux.conf && ln -s $(readlink -f ./tmux.conf) ~/.tmux.conf
 
 # Install software I like
 ask "Would you like to install optional software?" &&
