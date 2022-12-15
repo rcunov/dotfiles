@@ -20,7 +20,7 @@ read -p "What package manager are you using? (ex. dnf | apt): " PMGR
 
 # Links aliases to shell-specific config file to .bashrc
 ask "Would you like to add aliases to ~/.bash_aliases?" && 
-rm ~/.bash_aliases && ln -s $(readlink -f ./aliases.txt) ~/.bash_aliases
+touch ~/.bash_aliases && rm ~/.bash_aliases && ln -s $(readlink -f ./aliases.txt) ~/.bash_aliases
 
 # Includes bashrc configs in the ~/.bashrc
 ask "Would you like to set bashrc properties like the prompt? " &&
