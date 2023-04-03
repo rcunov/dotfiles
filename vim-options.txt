@@ -7,3 +7,4 @@ set foldmethod=indent
 set foldlevel=20
 nnoremap <Space> za
 let g:indentLine_char = '¦'
+hi Normal guibg=NONE ctermbg=NONE
