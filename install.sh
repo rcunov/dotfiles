@@ -40,7 +40,8 @@ mkdir -p ~/.vim/pack/git-plugins/start &&
 git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale &&
 git clone https://github.com/Yggdroot/indentLine.git ~/.vim/pack/vendor/start/indentLine &&
 vim -u NONE -c "helptags  ~/.vim/pack/vendor/start/indentLine/doc" -c "q" &&
-pip install --user yamllint
+pip install --user yamllint && mkdir -p ~/.config/yamllint &&
+ln -s $(readlink -f ./yamllint.config) ~/.config/yamllint/config
 
 # Add my public keys to authorized_keys file
 ask "Would you like to add public keys to ~/.ssh/authorized_keys?" &&
