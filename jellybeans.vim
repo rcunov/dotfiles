@@ -732,4 +732,4 @@ delf s:grey_level
 delf s:grey_number
 " }}}
 
-hi Normal ctermbg=16
+hi Normal ctermbg=NONE
