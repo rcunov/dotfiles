@@ -2,17 +2,17 @@
 
 # Initialize yes/no dialog function
 function ask {
-    while true; do
-        read -p "$* [y/n]: " yn
-        case $yn in
-            [Yy]*) return 0;;  
-            [Nn]*) echo "Skipping that part."; 
-				sleep 0.5;
-				return 1;;
-		*) echo "Yes or no answer, my guy.";
-				sleep 1;;
-        esac
-    done
+  while true; do
+    read -p "$* [y/N]: " yn
+    case $yn in
+      [Yy]*) return 0;;
+      "" | [Nn]*) echo "Skipping that part."; # default option is no
+        sleep 0.5;
+        return 1;;
+      *) echo "Yes or no answer, my guy.";
+        sleep 1;;
+  esac
+  done
 }
 
 # Prepares for various installs
