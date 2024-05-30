@@ -1,14 +1,24 @@
 #!/bin/bash
 
-# install
-sudo apt install neovim
+# make sure neovim is installed
+if ! command -v nvim &> /dev/null
+then
+  echo "nvim does not exist - attempting to install"
+  sleep 0.5
+  read -p "What package manager are you using? (ex. dnf | apt): " PMGR
+  sudo $PMGR install neovim
+fi
 
-# add config file
+# reset config file
 mkdir -p ~/.config/nvim
+rm -f ~/.config/nvim/init.vim
 ln $(readlink -f ./init.vim) ~/.config/nvim/init.vim
 
 # make colors dir
 mkdir -p ~/.config/nvim/colors
+
+# reset jellybeans
+rm -f ~/.config/nvim/colors/jellybeans.vim
 ln $(readlink -f ./jellybeans.vim) ~/.config/nvim/colors/jellybeans.vim
 
 # make package dir
@@ -16,4 +26,6 @@ mkdir -p ~/.config/nvim/pack
 
 # add rainbow csv to "csv" package folder
 mkdir -p ~/.config/nvim/pack/csv/{opt,start}
-git clone https://github.com/mechatroner/rainbow_csv ~/.config/nvim/pack/csv/start/rainbow_csv
+csvRepoSrc=https://github.com/mechatroner/rainbow_csv
+csvRepoDst=~/.config/nvim/pack/csv/start/rainbow_csv
+git clone "$csvRepoSrc" "$csvRepoDst" 2> /dev/null || git -C "$csvRepoDst" pull
