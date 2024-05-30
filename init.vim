@@ -1,21 +1,30 @@
+" -> main
+syntax on
+filetype plugin on
+
+" -> visual tweaks
+set guicursor=a:block
+colorscheme jellybeans
 set cursorline
-set smartcase
 set hlsearch
+
+" -> interaction/behavior tweaks
+set mouse=a
+set smartcase
 set expandtab
 set wildmode=longest,list
-syntax on
-set mouse=a
 set clipboard=unnamedplus
-filetype plugin on
-colorscheme jellybeans
-nnoremap <CR> :noh<CR><CR>
-
-set guicursor=a:block
-" set guicursor=a:blinkwait500-blinkoff500-blinkon500,a:hor100
-
 set mousemodel=extend " for windows
-au VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q") " neovim + windows terminal bugfix
 " set mousemodel=popup_setpos " for macOS
+au VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q") " neovim + windows terminal cursor bugfix
 
-" indent/whitespace guides
+" -> indent/whitespace guides
 set list lcs+=trail:·,tab:»\ ,multispace:·\ 
+
+" -> folding
+set foldmethod=indent
+set nofoldenable
+
+" -> rebinds
+nnoremap <CR> :noh<CR><CR>
+nnoremap <Space> za
