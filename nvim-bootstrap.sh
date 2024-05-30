@@ -26,6 +26,12 @@ mkdir -p ~/.config/nvim/pack
 
 # add rainbow csv to "csv" package folder
 mkdir -p ~/.config/nvim/pack/csv/{opt,start}
-csvRepoSrc=https://github.com/mechatroner/rainbow_csv
-csvRepoDst=~/.config/nvim/pack/csv/start/rainbow_csv
-git clone "$csvRepoSrc" "$csvRepoDst" 2> /dev/null || git -C "$csvRepoDst" pull
+RepoSrc=https://github.com/mechatroner/rainbow_csv
+RepoDst=~/.config/nvim/pack/csv/start/rainbow_csv
+git clone "$RepoSrc" "$RepoDst" 2> /dev/null || git -C "$RepoDst" pull
+
+## add tabline plugin - ignored for now because of issue with jellybeans colorscheme and highlight when buff is changed
+#mkdir -p ~/.config/nvim/pack/tabs/{opt,start}
+#RepoSrc=https://github.com/romgrk/barbar.nvim
+#RepoDst=~/.config/nvim/pack/tabs/start/barbar-tabline
+#git clone "$RepoSrc" "$RepoDst" 2> /dev/null || git -C "$RepoDst" pull

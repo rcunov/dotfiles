@@ -7,6 +7,8 @@ set guicursor=a:block
 colorscheme jellybeans
 set cursorline
 set hlsearch
+"hi Normal guibg=NONE ctermbg=NONE
+"hi NonText ctermbg=NONE
 
 " -> interaction/behavior tweaks
 set mouse=a
@@ -33,3 +35,17 @@ set nofoldenable
 nnoremap <CR> :noh<CR><CR>
 nnoremap <Space> za
 tnoremap <Esc> <C-\><C-n>
+
+" " -> disable filetype icons for tabline
+" let g:barbar_auto_setup = v:false " disable auto-setup
+" lua << EOF
+"   require'barbar'.setup {
+"     animation = false,
+"     icons = {
+"         button = 'X',
+"         filetype = {
+"             enabled = false,
+"         }
+"     }
+" }
+" EOF
