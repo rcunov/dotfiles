@@ -16,3 +16,6 @@ set guicursor=a:block
 set mousemodel=extend " for windows
 au VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q") " neovim + windows terminal bugfix
 " set mousemodel=popup_setpos " for macOS
+
+" indent/whitespace guides
+set list lcs=trail:·,tab:»·,multispace:¦\ 
