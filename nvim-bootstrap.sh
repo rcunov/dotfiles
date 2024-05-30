@@ -5,11 +5,11 @@ sudo apt install neovim
 
 # add config file
 mkdir -p ~/.config/nvim
-ln -s init.vim ~/.config/nvim/init.vim
+ln -s $(readlink -f ./init.vim) ~/.config/nvim/init.vim
 
 # make colors dir
 mkdir -p ~/.config/nvim/colors
-ln -s jellybeans.vim ~/.config/nvim/colors/jellybeans.vim
+ln -s $(readlink -f ./jellybeans.vim) ~/.config/nvim/colors/jellybeans.vim
 
 # make package dir
 mkdir -p ~/.config/nvim/pack
