@@ -16,4 +16,4 @@ mkdir -p ~/.config/nvim/pack
 
 # add rainbow csv
 mkdir -p ~/.config/nvim/pack/csv/{opt,start}
-git clone https://github.com/mechatroner/rainbow_csv ~/.config/nvim/pack/csv/start
+git clone https://github.com/mechatroner/rainbow_csv ~/.config/nvim/pack/csv/start/rainbow_csv
