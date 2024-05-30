@@ -21,6 +21,9 @@ au VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q") " neovim + win
 " -> indent/whitespace guides
 set list lcs+=trail:·,tab:»\ ,multispace:·\ 
 
+" -> tab width settings
+autocmd FileType yaml,yml,sh,bash,ash setlocal shiftwidth=2 tabstop=2
+
 " -> folding
 set foldlevel=99
 set foldmethod=indent
@@ -29,3 +32,4 @@ set nofoldenable
 " -> rebinds
 nnoremap <CR> :noh<CR><CR>
 nnoremap <Space> za
+tnoremap <Esc> <C-\><C-n>
