@@ -22,6 +22,7 @@ au VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q") " neovim + win
 set list lcs+=trail:·,tab:»\ ,multispace:·\ 
 
 " -> folding
+set foldlevel=99
 set foldmethod=indent
 set nofoldenable
 
