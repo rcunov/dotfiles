@@ -23,7 +23,7 @@ fi
 
 # reset config file
 mkdir -p ~/.config/nvim
-reset ./init.vim ~/.config/nvim/init.vim
+reset ./init.lua ~/.config/nvim/init.lua
 
 # make colors dir
 mkdir -p ~/.config/nvim/colors
