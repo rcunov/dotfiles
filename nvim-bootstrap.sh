@@ -5,7 +5,7 @@ if ! command -v nvim &> /dev/null
 then
   echo "nvim does not exist - attempting to install"
   cd /tmp
-  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+  curl -sSLO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
   sudo tar -C /opt -xzf nvim-linux64.tar.gz
   rm nvim-linux64.tar.gz
   cd -
