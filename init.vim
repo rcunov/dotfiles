@@ -7,8 +7,8 @@ set guicursor=a:block
 colorscheme jellybeans
 set cursorline
 set hlsearch
-"hi Normal guibg=NONE ctermbg=NONE
-"hi NonText ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
+hi NonText ctermbg=NONE
 
 " -> interaction/behavior tweaks
 set mouse=a
