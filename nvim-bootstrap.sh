@@ -4,9 +4,11 @@
 if ! command -v nvim &> /dev/null
 then
   echo "nvim does not exist - attempting to install"
-  sleep 0.5
-  read -p "What package manager are you using? (ex. dnf | apt): " PMGR
-  sudo $PMGR install neovim
+  cd /tmp
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+  sudo tar -C /opt -xzf nvim-linux64.tar.gz
+  echo export PATH="$PATH:/opt/nvim-linux64/bin" >> ~/.bashrc
+  echo "may need to source ~/.bashrc"
 fi
 
 # reset config file
