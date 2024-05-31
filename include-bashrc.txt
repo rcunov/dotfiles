@@ -1,3 +1,0 @@
-if [ -f ~/dotfiles/bashrc-options ]; then
-      . ~/dotfiles/bashrc-options
-fi

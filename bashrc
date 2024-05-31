@@ -1,2 +1,0 @@
-PROMPT_DIRTRIM=1
-PS1='\h \w \e[1;35m\$\e[0m '

@@ -1,3 +1,0 @@
-PROMPT_DIRTRIM=1
-PS1='\h:\w\[\033[01;35m\]\$\[\033[00m\] '
-export TZ="America/Chicago"
