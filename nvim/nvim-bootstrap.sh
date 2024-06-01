@@ -22,15 +22,14 @@ then
 fi
 
 # reset config file
-mkdir -p ~/.config/nvim
+mkdir -p ~/.config/nvim/lua
 reset ./init.lua ~/.config/nvim/init.lua
 
 # make colors dir
 mkdir -p ~/.config/nvim/colors
 
 # reset jellybeans
-rm -f ~/.config/nvim/colors/jellybeans.vim
-ln $(readlink -f ./jellybeans.vim) ~/.config/nvim/colors/jellybeans.vim
+reset ./jellybeans.vim ~/.config/nvim/colors/jellybeans.vim
 
 # make package dir
 mkdir -p ~/.config/nvim/pack
@@ -40,9 +39,3 @@ mkdir -p ~/.config/nvim/pack/csv/{opt,start}
 RepoSrc=https://github.com/mechatroner/rainbow_csv
 RepoDst=~/.config/nvim/pack/csv/start/rainbow_csv
 git clone "$RepoSrc" "$RepoDst" 2> /dev/null || git -C "$RepoDst" pull
-
-## add tabline plugin - ignored for now because of issue with jellybeans colorscheme and highlight when buff is changed
-#mkdir -p ~/.config/nvim/pack/tabs/{opt,start}
-#RepoSrc=https://github.com/romgrk/barbar.nvim
-#RepoDst=~/.config/nvim/pack/tabs/start/barbar-tabline
-#git clone "$RepoSrc" "$RepoDst" 2> /dev/null || git -C "$RepoDst" pull
