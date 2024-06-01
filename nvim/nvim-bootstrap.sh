@@ -22,8 +22,9 @@ then
 fi
 
 # reset config file
-mkdir -p ~/.config/nvim/lua
+mkdir -p ~/.config/nvim/lua/tweaks
 reset ./init.lua ~/.config/nvim/init.lua
+reset ./tweaks.lua ~/.config/nvim/lua/tweaks/init.lua
 
 # make colors dir
 mkdir -p ~/.config/nvim/colors
