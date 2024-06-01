@@ -19,8 +19,8 @@ function ask {
 read -p "What package manager are you using? (ex. dnf | apt): " PMGR
 
 # Links aliases to shell-specific config file to .bashrc
-ask "Would you like to add aliases to ~/.bash_aliases?" && 
-rm -f ~/.bash_aliases && ln -s $(readlink -f ./aliases.txt) ~/.bash_aliases
+ask "Would you like to add aliases to ~/.bash_aliases?" &&
+rm -f ~/.bash_aliases && ln $(readlink -f ./aliases.txt) ~/.bash_aliases
 
 # Includes bashrc configs in the ~/.bashrc
 ask "Would you like to set bashrc properties like the prompt? " &&
@@ -32,10 +32,6 @@ sudo $PMGR install ssh-import-id -y &&
 ssh-import-id gh:rcunov
 
 # Add tmux configuration
-ask "Would you like to set the tmux config?" && 
+ask "Would you like to set the tmux config?" &&
 sudo $PMGR install tmux -y &&
-touch ~/.tmux.conf && rm ~/.tmux.conf && ln -s $(readlink -f ./tmux.conf) ~/.tmux.conf
-
-# Install software I like
-ask "Would you like to install optional software?" &&
-sudo $PMGR update && sudo $PMGR install $(cat software.txt)
+rm -f ~/.tmux.conf && ln $(readlink -f ./tmux.conf) ~/.tmux.conf
