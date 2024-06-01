@@ -1,4 +1,4 @@
 vim.cmd([[
-  nnoremap <Space> za
+  nnoremap <Alt> za
   tnoremap <Esc> <C-\><C-n>
 ]])

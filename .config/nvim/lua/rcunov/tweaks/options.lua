@@ -24,7 +24,7 @@ vim.opt.smartcase = true
 vim.cmd([[
   set mouse=a
   set wildmode=longest,list
-  set clipboard=unnamedplus
+  "set clipboard=unnamedplus
   set mousemodel=extend " for windows
   " set mousemodel=popup_setpos " for macOS
   au VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q") " neovim + windows terminal cursor bugfix
