@@ -23,7 +23,7 @@ vim.opt.expandtab = true
 vim.opt.smartcase = true
 vim.cmd([[
   set mouse=a
-  set wildmode=longest,list
+  "set wildmode=lastused
   "set clipboard=unnamedplus
   set mousemodel=extend " for windows
   " set mousemodel=popup_setpos " for macOS
@@ -40,7 +40,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.cmd([[
-  autocmd FileType yaml,yml,sh,bash,ash setlocal shiftwidth=2 tabstop=2
+  autocmd FileType yaml,yml,sh,bash,ash,lua setlocal shiftwidth=2 tabstop=2
 ]])
 
 ---> folding

@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 require("rcunov.tweaks")
 require("rcunov.lazy")
 
