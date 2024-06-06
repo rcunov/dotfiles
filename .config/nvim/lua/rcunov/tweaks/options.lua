@@ -21,6 +21,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.expandtab = true
 vim.opt.smartcase = true
+vim.opt.splitbelow = true
 vim.cmd([[
   set mouse=a
   "set wildmode=lastused
