@@ -15,6 +15,9 @@ vim.cmd([[
   "inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
   " -> peek definition
   nnoremap <leader>q :call tag_peek#ShowTag()<CR>
+  " -> increase/reduce indent in visual line mode
+  xnoremap <Tab> >gv
+  xnoremap <S-Tab> <gv
 ]])
 
 vim.keymap.set("n", "<leader>df", vim.cmd.Ex)
