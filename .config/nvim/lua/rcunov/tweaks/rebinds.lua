@@ -16,3 +16,4 @@ vim.cmd([[
 ]])
 
 vim.keymap.set("n", "<leader>df", vim.cmd.Ex)
+vim.keymap.set("n", "<leader><Space>", 'za')
