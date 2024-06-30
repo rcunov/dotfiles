@@ -5,6 +5,8 @@ vim.opt.cursorline = true
 vim.opt.hlsearch = true
 vim.opt.scrolloff = 8
 vim.opt.wrap = false
+vim.opt.termguicolors = true
+
 vim.cmd([[
   colorscheme jellybeans
   let g:jellybeans_overrides = {
