@@ -1,4 +1,5 @@
 colorscheme lunaperche
+set background=dark
 set smartcase
 set nohls
 
