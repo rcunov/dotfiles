@@ -1,10 +1,13 @@
 " visual/main
 colorscheme lunaperche
 set background=dark
+set ignorecase
 set smartcase
-set nohls
 set mouse=a
 syntax on
+
+set hls
+nnoremap <C-l> :nohlsearch<CR>
 
 " folding
 set foldmethod=indent
