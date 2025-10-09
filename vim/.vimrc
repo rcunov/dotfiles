@@ -4,6 +4,7 @@ set background=dark
 set ignorecase
 set smartcase
 set mouse=a
+set scrolloff=8
 syntax on
 
 set hls
