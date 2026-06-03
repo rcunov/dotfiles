@@ -7,6 +7,10 @@ set mouse=a
 set scrolloff=8
 syntax on
 
+set ruler
+set laststatus=2
+"set statusline=%f "tail of the filename
+
 set hls
 nnoremap <C-l> :nohlsearch<CR>
 
@@ -18,5 +22,5 @@ nnoremap <space> za
 " yaml
 set shiftwidth=4 smarttab
 autocmd FileType yaml,yml setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-autocmd FileType yaml,yml map gc 0:norm i#<CR>
-autocmd FileType yaml,yml map gz 0:norm x<CR>
+autocmd FileType yaml,yml,sh,bash map gc 0:norm i#<CR>
+autocmd FileType yaml,yml,sh,bash map gz 0:norm x<CR>
