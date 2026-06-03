@@ -1,5 +1,5 @@
 alias ls="ls --color --group-directories-first"
-alias ll="ls -hAlF"
+alias ll="ls -halF"
 alias l="ls -hl"
 #alias temp="watch -n 1 vcgencmd measure_temp"
 alias ta="tmux attach -t"
